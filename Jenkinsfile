@@ -4,7 +4,7 @@ pipeline {
         stage("Build") {
             steps {
                 tool 'Maven 3'
-                sh "/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/Maven_3/mvn clean install"
+                sh "mvn clean install"
             }
         }
         stage("Test") {
