@@ -15,10 +15,12 @@ import lombok.NoArgsConstructor;
 public class Users {
     @Id
     @GeneratedValue
-    private Long idUser;
+    private int idUser;
     private String login;
     private String password;
     private Boolean isAdmin;
 
 
+    public Users(String login, String password, boolean isAdmin) {
+    }
 }

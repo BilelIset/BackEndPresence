@@ -6,7 +6,7 @@ import tn.isetsf.presence.Entity.Users;
 
 import java.util.Optional;
 
-public interface UserRepo extends JpaRepository<Users, Long> {
+public interface UserRepo extends JpaRepository<Users, Integer> {
     Optional<Users> findByLoginAndPassword(String login, String password);
 
 }
