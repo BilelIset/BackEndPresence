@@ -4,6 +4,7 @@ pipeline {
         stage("Build") {
             steps {
             sh("docker-compose down")
+            sh(" mvn dependency:purge-local-repository")
                 tool 'Maven 3.9.6'
                 sh "mvn clean install"
             }
