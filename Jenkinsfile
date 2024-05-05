@@ -3,25 +3,22 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-                tool 'maven 3.9.6'
+                tool 'Maven 3.9.6'
                 sh "mvn clean install"
             }
         }
         stage("Test") {
             steps {
-                echo "Tests skipped"
+                echo ("test skipped")
             }
         }
         stage("Run") {
             steps {
-                script {
-                    // Démarrer les conteneurs Docker et récupérer leur ID
-                    def dockerComposeOutput = sh script: "docker-compose up --build -d", returnStdout: true
-                    def containerId = dockerComposeOutput.trim()
-
-                    // Récupérer les journaux du conteneur Docker et les afficher dans la console Jenkins
-                    sh "docker logs $containerId"
-                }
+            scipt{
+            def dockerout= sh scipt:"docker-compose up --build",returnStdout:true
+            def contid=dockerout.trim()
+            sh"docker logs $contid"}
+                sh " docker-compose up --build"
             }
         }
     }
