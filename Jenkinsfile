@@ -1,13 +1,20 @@
-pipeline{
-agent any
-stages{
-stage "build"{
-sh("mvn clean install")
-
-}stage "test"{
-sh("mvn test")
-}stage "run"{
-sh("sudo docker-compose up --build")
+pipeline {
+    agent any
+    stages {
+        stage("Build") {
+            steps {
+                sh "mvn clean install"
+            }
+        }
+        stage("Test") {
+            steps {
+                sh "mvn test"
+            }
+        }
+        stage("Run") {
+            steps {
+                sh "sudo docker-compose up --build"
+            }
+        }
+    }
 }
-
-}}
