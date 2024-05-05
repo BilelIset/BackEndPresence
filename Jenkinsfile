@@ -8,7 +8,6 @@ pipeline {
             }
         }
 
-        }
         stage("Run") {
             steps {
                 script {
