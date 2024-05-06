@@ -1,0 +1,79 @@
+package tn.isetsf.presence;
+
+import java.time.LocalTime;
+import java.util.Calendar;
+import java.util.Date;
+
+public class CalculDate {
+    public int indexJour(){
+        Date now=new Date();
+        int index=0;
+        char[] ls=now.toString().trim().toCharArray();
+        if(ls[0]=='M'){
+            index=1;
+            System.out.println(index);
+        }if(ls[0]=='T'&&ls[1]=='u'){
+            index=2;
+        }if(ls[0]=='W'){
+            index=3;
+        }if(ls[0]=='T'&&ls[1]=='h'){
+            index=4;
+        }
+        if (ls[0]=='F') {
+            index=5;
+        }
+        if (ls[0]=='S'&&ls[1]=='a') {
+            index=6;
+        }if(ls[0]=='S'&&ls[1]=='u'){
+            index=7;
+        }
+        return index;
+    }
+    public int getYear(){
+        return Calendar.getInstance().getWeekYear();
+
+    }
+    public int getSemestre(){
+        Calendar calendar=Calendar.getInstance();
+        if( calendar.get(Calendar.MONTH)+1>=2&&calendar.get(Calendar.MONTH)+1<=9){
+            return 2;
+        }else {
+            return 1;
+        }
+    }
+    public int getSeance(){
+        LocalTime time=LocalTime.now();
+        if (time.isAfter(LocalTime.of(8, 15)) && time.isBefore(LocalTime.of(9, 45))) {
+            return 1;
+        } else if (time.isAfter(LocalTime.of(10, 0)) && time.isBefore(LocalTime.of(11, 30))) {
+            return 2;
+        } else if (time.isAfter(LocalTime.of(11, 45)) && time.isBefore(LocalTime.of(13, 15))) {
+            return 3;
+        } else if (time.isAfter(LocalTime.of(13, 20)) && time.isBefore(LocalTime.of(14, 50))) {
+            return 4;
+        } else if (time.isAfter(LocalTime.of(14, 55)) && time.isBefore(LocalTime.of(16, 25))) {
+            return 5;
+        } else if (time.isAfter(LocalTime.of(16, 30)) && time.isBefore(LocalTime.of(18, 0))) {
+            return 6;
+        } else {
+            return 0;
+        }
+    }
+    public int getSeanceDouble(){
+        LocalTime time=LocalTime.now();
+            if (time.isAfter(LocalTime.of(7, 0)) && time.isBefore(LocalTime.of(10, 0))) {
+                return 1;
+            } else if (time.isAfter(LocalTime.of(10, 0)) && time.isBefore(LocalTime.of(13, 20))) {
+                return 2;
+            } else if (time.isAfter(LocalTime.of(11, 45)) && time.isBefore(LocalTime.of(15, 0))) {
+                return 3;
+            } else if (time.isAfter(LocalTime.of(13, 20)) && time.isBefore(LocalTime.of(16, 45))) {
+                return 4;
+            } else if (time.isAfter(LocalTime.of(14, 55)) && time.isBefore(LocalTime.of(18, 0))) {
+                return 5;
+            } else {
+                return 0;
+            }
+        }
+
+}
