@@ -30,10 +30,12 @@ public class EmploiDuJourController {
     int calendar=Calendar.YEAR;
     Boolean charged=false;
     @GetMapping(value = "/getempljour",produces = MediaType.APPLICATION_JSON_VALUE)
-    public void chargerEmploiJours(){
-        System.out.println(calculDate.getYear()+" "+calculDate.getSemestre()+" "+ calculDate.indexJour());
-        List<Emploi> emploisExternes = emploiRepo.getEmloiDeJour(String.valueOf(calculDate.getYear()), String.valueOf(calculDate.getSemestre()), String.valueOf(calculDate.indexJour()));
-        List<EmploiDuJour> emploisDuJour = new ArrayList<>();
+    public String chargerEmploiJours(){
+
+if(emploiDuJourRepo.verifChargemntEmploi(calculDate.getDate()).isEmpty()){
+    System.out.println(calculDate.getYear()+" "+calculDate.getSemestre()+" "+ calculDate.indexJour());
+    List<Emploi> emploisExternes = emploiRepo.getEmloiDeJour(String.valueOf(calculDate.getYear()), String.valueOf(calculDate.getSemestre()), String.valueOf(calculDate.indexJour()));
+    List<EmploiDuJour> emploisDuJour = new ArrayList<>();
 try {
 
 
@@ -48,23 +50,22 @@ try {
         emploiDuJour.setNiveaux(emploiExterne.getNom_niveau());
         emploiDuJour.setMatiere(emploiExterne.getNom_matiere());
         emploiDuJour.setPar15(emploiExterne.getPar15());
-        emploiDuJour.setDate(LocalDateTime.now().toString());
+        emploiDuJour.setDate(calculDate.getDate());
 
         emploisDuJour.add(emploiDuJour);
     }
     emploiDuJourRepo.saveAll(emploisDuJour);
+    return ("Emploi mis a jours avec success");
+
 }catch (Exception e){
     System.out.println();
 }
-    }
-}/*private int idEmploisJours;
-private String annees;
-private String semestre;
-private  String jour;
-private String Seance;
-private String salle;
-private String enseignant;
-private String niveaux;
-private String matiere;
-private String par15;
-*/
+    }return "Echec Emploi deja chargé dans la base";}
+@GetMapping(value = "/crenaux",produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<EmploiDuJour> chargerVrenaux(){
+      List<EmploiDuJour> list=new ArrayList<>();
+      list=  emploiDuJourRepo.chargerSeanceEnCour(calculDate.getDate(), String.valueOf(calculDate.getSeance()),String.valueOf(calculDate.getSeanceDouble()));
+        return list;
+}
+
+}

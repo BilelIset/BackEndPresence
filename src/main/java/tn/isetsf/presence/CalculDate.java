@@ -1,6 +1,8 @@
 package tn.isetsf.presence;
 
+import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -68,18 +70,26 @@ public class CalculDate {
     public int getSeanceDouble(){
         LocalTime time=LocalTime.now();
             if (time.isAfter(LocalTime.of(7, 0)) && time.isBefore(LocalTime.of(10, 0))) {
-                return 1;
+                return 7;
             } else if (time.isAfter(LocalTime.of(10, 0)) && time.isBefore(LocalTime.of(13, 20))) {
-                return 2;
+                return 8;
             } else if (time.isAfter(LocalTime.of(11, 45)) && time.isBefore(LocalTime.of(15, 0))) {
-                return 3;
+                return 9;
             } else if (time.isAfter(LocalTime.of(13, 20)) && time.isBefore(LocalTime.of(16, 45))) {
-                return 4;
+                return 10;
             } else if (time.isAfter(LocalTime.of(14, 55)) && time.isBefore(LocalTime.of(18, 0))) {
-                return 5;
+                return 11;
             } else {
                 return 0;
             }
+        }
+        public String getDate(){
+            LocalDateTime date = LocalDateTime.now();
+
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+            String dateformater = date.format(formatter);
+            return dateformater;
         }
 
 }
