@@ -30,7 +30,13 @@ public class CalculDate {
         return index;
     }
     public int getYear(){
-        return Calendar.getInstance().getWeekYear();
+        Calendar calendar=Calendar.getInstance();
+        int mois=calendar.get(Calendar.MONTH);
+        if(mois>=8) {
+            return Calendar.getInstance().getWeekYear();
+        }else {
+            return Calendar.getInstance().getWeekYear()-1;
+        }
 
     }
     public int getSemestre(){

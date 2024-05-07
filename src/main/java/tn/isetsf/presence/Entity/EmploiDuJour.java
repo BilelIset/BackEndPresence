@@ -23,6 +23,7 @@ public class EmploiDuJour {
     private String niveaux;
     private String matiere;
     private String par15;
+    private String date;
 
 
 }
