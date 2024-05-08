@@ -19,6 +19,7 @@ public class EmploiDuJour {
     private  String jour;
     private String Seance;
     private String salle;
+    private String nomSalle;
     private String enseignant;
     private String niveaux;
     private String matiere;
