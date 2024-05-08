@@ -28,8 +28,8 @@ public class SalleController {
 
     }
     @GetMapping(value = "/date",produces = MediaType.APPLICATION_JSON_VALUE)
-    public int getDateJour(@RequestParam String date){
-        return calculDate.dateJourMapping(date);
+    public String getDateJour(@RequestParam String date){
+        return "(NB: Le premier Jour de la semaine est Lundi qui correspond a 1 et dimanche est 7) \n\n La date : "+date+" correspond a : "+calculDate.dateJourMapping(date);
     }
 
 }
