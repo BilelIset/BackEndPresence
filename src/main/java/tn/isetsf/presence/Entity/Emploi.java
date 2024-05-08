@@ -5,9 +5,11 @@ import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Immutable;
 
 @Entity
 @Data
+@Immutable
 @AllArgsConstructor
 @NoArgsConstructor
 public class Emploi {
