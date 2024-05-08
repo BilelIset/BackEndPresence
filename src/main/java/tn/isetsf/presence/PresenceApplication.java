@@ -9,6 +9,8 @@ import tn.isetsf.presence.Repository.EmploiRepo;
 import tn.isetsf.presence.Repository.UserRepo;
 
 import java.sql.Time;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -25,9 +27,6 @@ public class PresenceApplication {
 	public static void main(String[] args) {
 
 		SpringApplication.run(PresenceApplication.class, args);
-
-
-
 	}
 
 

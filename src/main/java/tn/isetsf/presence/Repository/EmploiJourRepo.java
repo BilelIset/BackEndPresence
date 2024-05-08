@@ -11,4 +11,5 @@ public interface EmploiJourRepo extends JpaRepository<EmploiDuJour,Integer> {
     List<String> verifChargemntEmploi(String date1);
     @Query("SELECT e FROM EmploiDuJour e WHERE e.date=:date1 AND e.Seance=:seanceencours OR e.Seance=:seancedouble")
     List<EmploiDuJour> chargerSeanceEnCour(String date1,String seanceencours,String seancedouble);
+
 }

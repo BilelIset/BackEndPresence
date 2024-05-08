@@ -29,7 +29,6 @@ public class PointageController {
             Pointage pointage=new Pointage();
             pointage.setPresent(true);
             pointage.setSeance(Integer.parseInt(emploiDuJour.getSeance()));
-            pointage.setPar15(Boolean.parseBoolean(emploiDuJour.getPar15()));
             pointage.setSalle(Integer.parseInt(emploiDuJour.getSalle()));
             pointage.setDate(calculDate.getDate());
         }

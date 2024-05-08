@@ -1,5 +1,7 @@
 package tn.isetsf.presence;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -88,8 +90,39 @@ public class CalculDate {
 
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-            String dateformater = date.format(formatter);
-            return dateformater;
+            return date.format(formatter);
+        }
+        public int dateJourMapping(String dateStr){
+
+
+            LocalDate date = LocalDate.parse(dateStr, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+
+            DayOfWeek dayOfWeek = date.getDayOfWeek();
+
+            int index=0;
+            char[] ls=dayOfWeek.toString().trim().toCharArray();
+            if(ls[0]=='M'){
+                index=1;
+                System.out.println(index);
+            }if(ls[0]=='T'&&ls[1]=='U'){
+                index=2;
+            }if(ls[0]=='W'){
+                index=3;
+            }if(ls[0]=='T'&&ls[1]=='H'){
+                index=4;
+            }
+            if (ls[0]=='F') {
+                index=5;
+            }
+            if (ls[0]=='S'&&ls[1]=='A') {
+                index=6;
+            }if(ls[0]=='S'&&ls[1]=='U'){
+                index=7;
+            }
+            System.out.println(index);
+
+
+            return index;
         }
 
 }

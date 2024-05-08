@@ -18,7 +18,6 @@ public class Pointage {
     private int idPointage;
     private int salle;
     private int seance;
-    private boolean par15;
     private boolean present;
     private String date;
 
