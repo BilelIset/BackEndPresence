@@ -19,7 +19,7 @@ public class Emploi {
         private String salle1;
         private String nom_salle;
         private String matiere1;
-        private String Nom_matiere;
+        private String nom_matiere;
         private String abv;
         private String niveau1;
         private String Nom_niveau;
@@ -39,7 +39,7 @@ public class Emploi {
         private String coefTP;
         private String coefTD;
         private String nom_f;
-        private String nomdepSalle;
+        private String nomdepsalle;
         private String nomdepfiliere;
         private String nomdepEnseignant;
 

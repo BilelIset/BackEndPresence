@@ -2,6 +2,7 @@ package tn.isetsf.presence.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,6 +32,7 @@ public class EmploiDuJourController {
     Boolean charged=false;
 
     @GetMapping(value = "/getempljour",produces = MediaType.APPLICATION_JSON_VALUE)
+    @Scheduled(fixedDelay = 86400000)
     public Resp chargerEmploiJours(){
         Resp resp = new Resp();
         resp.setStatue(false);

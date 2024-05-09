@@ -13,4 +13,5 @@ public class Salle {
     @Id
     private int salle1;
     private String nom_salle;
+    private  String nomdepsalle;
 }
