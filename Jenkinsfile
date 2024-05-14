@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-                tool 'Maven 3.9.6'
+                tool 'Maven 3.6.3'
                 sh "mvn clean install"
             }
         }
