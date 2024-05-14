@@ -1,15 +1,6 @@
 pipeline {
     agent any
     stages {
-
-            stage("Checkout") {
-                steps {
-
-                    git branch: 'main',
-                        credentialsId: '', // Laissez ceci vide pour utiliser le token d'accès personnel
-                        url: 'https://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@github.com/BilelIset/BackEndPresence.git'
-                }
-
         stage("Build") {
             steps {
                 sh("docker-compose down")
