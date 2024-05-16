@@ -9,6 +9,6 @@ COPY src ./src
 COPY target/presence-0.0.1-SNAPSHOT.jar /app/presence-0.0.1-SNAPSHOT.jar
 COPY src/main/resources/application.properties /app/src/main/resources/application.properties
 
-EXPOSE 8080
+EXPOSE 80
 # Commande par défaut pour exécuter l'application Spring Boot
 CMD ["java", "-jar", "/app/presence-0.0.1-SNAPSHOT.jar"]
