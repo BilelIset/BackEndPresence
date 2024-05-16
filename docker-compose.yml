@@ -4,7 +4,7 @@ services:
   app:
     build: .
     ports:
-      - "8085:8085"
+      - "8080:8080"
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://51.77.210.237:5432/faculte
       - SPRING_DATASOURCE_USERNAME=postgres
