@@ -13,6 +13,8 @@ import tn.isetsf.presence.Entity.Salle;
 import tn.isetsf.presence.Repository.EmploiJourRepo;
 import tn.isetsf.presence.Repository.EmploiRepo;
 import tn.isetsf.presence.Repository.SalleRepo;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 
 import java.util.ArrayList;
 import java.util.List;
