@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 D:\Back\presence\src\main\java\tn\isetsf\presence\Entity\User.java
 D:\Back\presence\src\main\java\tn\isetsf\presence\PresenceApplication.java
+=======
+D:\Back\presence\src\main\java\tn\isetsf\presence\PresenceApplication.java
+D:\Back\presence\src\main\java\tn\isetsf\presence\Entity\Users.java
+>>>>>>> e12e2df1becbe218c9fecf99cb073acda856bbdb
 D:\Back\presence\src\main\java\tn\isetsf\presence\Repository\UserRepo.java
 D:\Back\presence\src\main\java\tn\isetsf\presence\Controller\UserController.java
 D:\Back\presence\src\main\java\tn\isetsf\presence\Entity\Resp.java

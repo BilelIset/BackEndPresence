@@ -15,10 +15,19 @@ import lombok.NoArgsConstructor;
 public class Users {
     @Id
     @GeneratedValue
+<<<<<<< HEAD
     private Long idUser;
+=======
+    private int idUser;
+>>>>>>> e12e2df1becbe218c9fecf99cb073acda856bbdb
     private String login;
     private String password;
     private Boolean isAdmin;
 
 
+<<<<<<< HEAD
+=======
+    public Users(String login, String password, boolean isAdmin) {
+    }
+>>>>>>> e12e2df1becbe218c9fecf99cb073acda856bbdb
 }

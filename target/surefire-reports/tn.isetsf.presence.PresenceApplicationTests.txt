@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: tn.isetsf.presence.PresenceApplicationTests
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.014 s -- in tn.isetsf.presence.PresenceApplicationTests
+=======
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.011 s -- in tn.isetsf.presence.PresenceApplicationTests
+>>>>>>> e12e2df1becbe218c9fecf99cb073acda856bbdb
