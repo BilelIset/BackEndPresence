@@ -1,0 +1,17 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "8085:8085"
+
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://192.168.43.127:3306/faculte
+      - SPRING_DATASOURCE_USERNAME=bilel
+      - SPRING_DATASOURCE_PASSWORD=pass
+    networks:
+      - faculte-reseau
+
+networks:
+  faculte-reseau:
+    driver: bridge
